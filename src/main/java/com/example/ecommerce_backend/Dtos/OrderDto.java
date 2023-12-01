@@ -1,4 +1,4 @@
-package com.example.ecommerce_backend.dtos;
+package com.example.ecommerce_backend.Dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;

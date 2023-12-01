@@ -1,6 +1,6 @@
-package com.example.ecommerce_backend.controller;
+package com.example.ecommerce_backend.Controller;
 
-import com.example.ecommerce_backend.dtos.OrderDto;
+import com.example.ecommerce_backend.Dtos.OrderDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

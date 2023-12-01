@@ -1,11 +1,7 @@
-package com.example.ecommerce_backend.models;
+package com.example.ecommerce_backend.Models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -28,7 +24,7 @@ public class Product {
 
 
     @ManyToOne
-    @Column(name="category_id")
+    @JoinColumn(name="category_id")
     private Category categoryId;
 
 }

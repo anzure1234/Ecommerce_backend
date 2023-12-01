@@ -1,8 +1,7 @@
-package com.example.ecommerce_backend.dtos;
+package com.example.ecommerce_backend.Dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Data

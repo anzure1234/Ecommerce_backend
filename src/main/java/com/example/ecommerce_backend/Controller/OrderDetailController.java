@@ -1,11 +1,9 @@
-package com.example.ecommerce_backend.controller;
+package com.example.ecommerce_backend.Controller;
 
-import com.example.ecommerce_backend.dtos.OrderDetailDto;
+import com.example.ecommerce_backend.Dtos.OrderDetailDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("${api.prefix}/order_details")

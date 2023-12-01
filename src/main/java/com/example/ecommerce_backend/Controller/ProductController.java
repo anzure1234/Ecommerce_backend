@@ -1,6 +1,6 @@
-package com.example.ecommerce_backend.controller;
+package com.example.ecommerce_backend.Controller;
 
-import com.example.ecommerce_backend.dtos.ProductDto;
+import com.example.ecommerce_backend.Dtos.ProductDto;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

@@ -1,4 +1,4 @@
-package com.example.ecommerce_backend.dtos;
+package com.example.ecommerce_backend.Dtos;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
