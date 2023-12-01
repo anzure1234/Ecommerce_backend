@@ -1,5 +1,6 @@
 package com.example.ecommerce_backend.Models;
 
+import com.example.ecommerce_backend.Enum.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,8 +42,7 @@ public class User {
     @Column(nullable = false,unique = true)
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name="role_id")
+    @Enumerated
     private Role role;
 
 }

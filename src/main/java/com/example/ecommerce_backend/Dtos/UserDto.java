@@ -1,5 +1,6 @@
 package com.example.ecommerce_backend.Dtos;
 
+import com.example.ecommerce_backend.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -36,6 +37,5 @@ public class UserDto {
     private String email;
 
     @NotNull(message = "Role ID is required")
-    @JsonProperty("role_id")
-    private int roleId;
+    private Role role;
 }

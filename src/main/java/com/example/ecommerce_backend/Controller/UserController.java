@@ -39,6 +39,7 @@ public class UserController {
             }
             User user = new User();
             BeanUtils.copyProperties(userDto,user);
+            user.setRole(userDto.getRole());
             userService.createUser(user);
             return ResponseEntity.ok("Register successfully");
         }catch (Exception e){
