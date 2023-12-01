@@ -22,6 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
     @PostMapping("/register")
     public ResponseEntity<?> createUser(
             @Valid @RequestBody UserDto userDto,
@@ -48,6 +49,7 @@ public class UserController {
     }
     @PostMapping("login")
     public ResponseEntity<String> login(@Valid @RequestBody UserLoginDto userLoginDto){
+        String token = userService.login(userLoginDto.getEmail(),userLoginDto.getPassword());
         return ResponseEntity.ok("some token");
     }
 }

@@ -42,7 +42,7 @@ public class User extends BaseEntity{
     @Column(nullable = false,unique = true)
     private String email;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 }

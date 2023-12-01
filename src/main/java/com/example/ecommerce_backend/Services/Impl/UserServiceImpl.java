@@ -17,6 +17,11 @@ public class UserServiceImpl implements UserService {
         if(userRepository.existsByEmail(email)){
            throw new DataIntegrityViolationException("Email already exits");
         }
+//        if(user.getFacebookAccountId()==0 &&user.getGoogleAccountId()==0){
+//            String password = user.getPassword();
+//            String encodePassword = passwordEncoder.encode(password);
+//            user.setPassword(encodePassword);
+//        }
         return userRepository.save(user);
     }
 
