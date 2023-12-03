@@ -2,7 +2,7 @@ package com.example.ecommerce_backend.Models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+@Builder
 @Entity
 @Getter
 @Setter
@@ -25,6 +25,6 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name="category_id")
-    private Category categoryId;
+    private Category category;
 
 }
