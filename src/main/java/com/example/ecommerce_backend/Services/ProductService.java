@@ -8,17 +8,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 public interface ProductService {
-    Product createProduct (ProductDto productDto);
-
-    Product getProductById(Long id);
-
-    Page<Product> getAllProduct(PageRequest pageRequest);
-
-    Product updateProduct(Long id,ProductDto productDto);
-
-    void deleteProduct(Long id);
-
+    Product createProduct(ProductDto productDTO) throws Exception;
+    Product getProductById(long id) throws Exception;
+    Page<Product> getAllProducts(PageRequest pageRequest);
+    Product updateProduct(long id, ProductDto productDTO) throws Exception;
+    void deleteProduct(long id);
     boolean existsByName(String name);
-
-    ProductImage createProductImage(Long productId, ProductImageDto productImageDto);
+    ProductImage createProductImage(
+            Long productId,
+            ProductImageDto productImageDTO) throws Exception;
 }
