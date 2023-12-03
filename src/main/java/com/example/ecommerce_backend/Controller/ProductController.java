@@ -108,7 +108,7 @@ public class ProductController {
                     }
                     //Lưu file và cập nhật trong DTO
                     String filename=storeFile(file);
-                    //TODO: lưu filename vào DB
+                    // lưu filename vào DB
                     ProductImage productImage=productService.createProductImage(existingProduct.getId(),
                             ProductImageDto.builder().imageUrl(filename).build()
                     );
