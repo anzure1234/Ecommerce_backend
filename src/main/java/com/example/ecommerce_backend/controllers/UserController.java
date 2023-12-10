@@ -2,6 +2,7 @@ package com.example.ecommerce_backend.controllers;
 
 import com.example.ecommerce_backend.dtos.UserDto;
 import com.example.ecommerce_backend.dtos.UserLoginDto;
+import com.example.ecommerce_backend.exceptions.DataNotFoundException;
 import com.example.ecommerce_backend.models.User;
 import com.example.ecommerce_backend.services.UserService;
 import jakarta.validation.Valid;
@@ -25,7 +26,9 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> createUser(
-            @Valid @RequestBody UserDto userDto,
+            @RequestBody
+//            @Valid
+            UserDto userDto,
             BindingResult result){
         try{
             if (result.hasErrors()) {
@@ -47,9 +50,9 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    @PostMapping("login")
-    public ResponseEntity<String> login(@Valid @RequestBody UserLoginDto userLoginDto){
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody @Valid UserLoginDto userLoginDto) throws DataNotFoundException {
         String token = userService.login(userLoginDto.getEmail(),userLoginDto.getPassword());
-        return ResponseEntity.ok("some token");
+        return ResponseEntity.ok(token);
     }
 }

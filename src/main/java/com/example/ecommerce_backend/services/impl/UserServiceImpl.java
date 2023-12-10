@@ -41,13 +41,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String login(String email, String password) throws DataNotFoundException {
-        Optional<User> optionalUser=userRepository.findByEmail(email);
+        Optional<User> optionalUser = userRepository.findByEmail(email);
         if (optionalUser.isEmpty()){
             throw new DataNotFoundException("Invalid user/password");
         }
-        User user =optionalUser.get();
+        User user = optionalUser.get();
         //check password
-        if(user.getFacebookAccountId()==0 &&user.getGoogleAccountId()==0) {
+        if(user.getFacebookAccountId()==0 && user.getGoogleAccountId()==0) {
             if(!passwordEncoder.matches(password, user.getPassword())){
                 throw new BadCredentialsException("Wrong email or password!");
             }

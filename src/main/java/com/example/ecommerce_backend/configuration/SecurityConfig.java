@@ -4,6 +4,7 @@ import com.example.ecommerce_backend.exceptions.DataNotFoundException;
 import com.example.ecommerce_backend.models.User;
 import com.example.ecommerce_backend.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,11 +20,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final UserRepository userRepository;
+
+    @Autowired
+    UserRepository userRepository;
     @Bean
     public UserDetailsService userDetailsService(){
         return email -> userRepository.
-                findByEmail("email").
+                findByEmail(email).
                 orElseThrow(()-> new UsernameNotFoundException("Cannot find user with email :"+email));
     }
     @Bean

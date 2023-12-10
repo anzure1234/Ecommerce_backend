@@ -21,7 +21,7 @@ import java.util.function.Function;
 public class JwtTokenUtil {
     @Value("${jwt.expiration}")
     private Long expiration;
-    @Value("${jwt.secretKey")
+    @Value("${jwt.secretKey}")
     private String secretKey;
 
     public String generateToken(User user){
